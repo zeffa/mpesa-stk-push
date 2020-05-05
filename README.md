@@ -23,40 +23,40 @@ The author was inspired by [https://github.com/jumaallan/android-mpesa-api]
     }
       
       
-  Declare LipaNaMpesaExpress  
-  <pre><code>
-  var lipaNaMpesaExpress: LipaNaMpesaExpress
-</code></pre>
+  Declare LipaNaMpesaExpress 
+   
+      var lipaNaMpesaExpress: LipaNaMpesaExpress
   
   In onCreate method of your activity/fragment, initialize LipaNaMpesaExpress  
-      <pre><code>
-lipaNaMpesaExpress = LipaNaMpesaExpress.Factory()
-            .withKeys(EnVars.CONSUMER_KEY, EnVars.CONSUMER_SECRET)
-            .run(Config.SANDBOX).build()</code></pre>  
+  
+  
+     lipaNaMpesaExpress = LipaNaMpesaExpress.Factory()
+                 .withKeys(EnVars.CONSUMER_KEY, EnVars.CONSUMER_SECRET)
+                 .run(Config.SANDBOX).build()
             
  <b>For production app, replace</b>  
- <pre><code>
-  Config.SANDBOX with Config.PRODUCTION
-</code></pre> 
+ 
+         Config.SANDBOX with Config.PRODUCTION
+         
   in the run() function above
             
 <i>Get the consumer key and consumer secret from safaricom daraja portal (https://developer.safaricom.co.ke/) by creating an account</i>  
  
  # To get the access token call  
   <i>Using kotlin with coroutines </i> 
-     <code>
-     lipaNaMpesaExpress.initToken(MpesaResponseListener<AccessToken>?)
-     </code>
+             
+             lipaNaMpesaExpress.initToken(MpesaResponseListener<AccessToken>?)
  
   <i>For kotlin without coroutine and Java, use</i> 
-    <code>
-    lipaNaMpesaExpress.initializeToken(MpesaResponseListener<AccessToken>) 
-    </code>instead. 
+    
+            lipaNaMpesaExpress.initializeToken(MpesaResponseListener<AccessToken>)
+     
+   instead. 
   
 **MpesaResponseListener<AccessToken> interface is nullable. You can pass null if you don't need to get the token in your activity/fragment**
   
-  # For actually stk push 
-  <pre><code>lipaNaMpesaExpress.getMpesaExpress(LNMRequest, MpesaResponseListener<LNMResponse>)</code></pre>  
+  # For actual stk push 
+              lipaNaMpesaExpress.getMpesaExpress(LNMRequest, MpesaResponseListener<LNMResponse>)  
   
    **LNMRequest** is the actual object you as request body, while **LNMResponse** is the api response object
    

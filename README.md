@@ -17,9 +17,10 @@ The author was inspired by [https://github.com/jumaallan/android-mpesa-api]
     
    **Add the dependency in your module level buidl.gradle** 
     
+    No release yet. Coming soon
     
     dependencies {
-        implementation 'com.github.zeffa:mpesa-stk-push:v1.0.0-beta'
+        implementation 'com.github.zeffa:mpesa-stk-push:$version'
     }
       
       
